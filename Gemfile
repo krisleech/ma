@@ -9,4 +9,4 @@ gem 'rake'
 gem 'pry-byebug'
 
 # until release, then move to gemspec
-gem 'wisper_next', path: '../wisper_next'
+gem 'wisper_next', git: 'https://gitlab.com/kris.leech/wisper_next'
