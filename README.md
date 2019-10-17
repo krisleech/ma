@@ -12,7 +12,6 @@ class MyPublisher
   def call
     # ...
     broadcast(MyEvent.new(user: user))
-    broadcast(MyEvent, user: user)
   end
 end
 
@@ -38,8 +37,8 @@ The event can be any object which is:
 * responds to `#to_h` returning a `Hash`
 
 We provide a simple Struct-like event object, `Ma::Event`, but would recommend using some
-thing like [dry-struct](https://dry-rb.org/gems/dry-struct/1.0/) to enforce
-attributes.
+thing like [dry-struct](https://dry-rb.org/gems/dry-struct/1.0/) to define an
+event schema.
 
 #### Enhancing Events
 
