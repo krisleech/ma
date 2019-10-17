@@ -1,4 +1,6 @@
-# Ma
+# Ma 間
+
+> Ma (間) is a Japanese word which can be roughly translated as "gap", "space", "pause" or "the space between two structural parts."
 
 ## Usage
 
