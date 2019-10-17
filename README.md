@@ -1,28 +1,64 @@
 # Ma
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ma`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Usage
 
-TODO: Delete this and the text above, and describe your gem
+```ruby
+class MyEvent < Ma::Event
+end
+
+class MyPublisher
+  include Ma.publisher
+
+  def call
+    # ...
+    broadcast(MyEvent.new(user: user))
+    broadcast(MyEvent, user: user)
+  end
+end
+
+class MyListener
+  include Ma.subscriber
+
+  on(MyEvent) do |event|
+    # ...
+  end
+end
+
+
+publisher = MyPublisher.new
+publisher.subscribe(MyListener.new)
+publisher.call
+```
+
+### Event class
+
+The event can be any object which is:
+
+* initialized with a `Hash` of attributes
+* responds to `#to_h` returning a `Hash`
+
+We provide a simple Struct-like event object, `Ma::Event`, but would recommend using some
+thing like [dry-struct](https://dry-rb.org/gems/dry-struct/1.0/) to enforce
+attributes.
+
+#### Enhancing Events
+
+You can add additional information to the payload by either overriding the
+`#initialize` method:
+
+```ruby
+class MyEvent < Ma::Event
+  def initialize(attrs)
+    super({ timestamp: Time.now.to_i }.merge(atrs))
+  end
+end
+```
 
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'ma'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ma
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
