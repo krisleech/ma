@@ -11,7 +11,7 @@ RSpec.describe 'Ma' do
   end
 
   class Subscriber
-    include Ma::Subscriber
+    include Ma.subscriber
 
     attr_accessor :actual_event
 

@@ -5,5 +5,8 @@ require "ma/event"
 
 module Ma
   class Error < StandardError; end
-  # Your code goes here...
+
+  def self.subscriber(*args)
+    Subscriber.new(*args)
+  end
 end

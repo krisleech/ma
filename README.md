@@ -25,11 +25,16 @@ class MyListener
   end
 end
 
-
 publisher = MyPublisher.new
 publisher.subscribe(MyListener.new)
 publisher.call
 ```
+
+#### Handling Events Asynchronously
+
+See [WisperNext]() for possible async adapters then:
+
+`include Ma.subscriber(:async)`.
 
 ### Event class
 

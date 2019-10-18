@@ -1,10 +1,16 @@
 require 'wisper_next'
 
 module Ma
-  module Subscriber
-    def self.included(base)
+  class Subscriber < Module
+
+    def initialize(*args)
+      @options = WisperNext::CastToOptions.(args)
+    end
+
+    def included(base)
       base.extend(ClassMethods)
-      base.include(WisperNext.subscriber)
+      base.include(WisperNext.subscriber(@options.slice(:async)))
+      super
     end
 
     module ClassMethods
