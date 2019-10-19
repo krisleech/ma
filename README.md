@@ -32,9 +32,16 @@ publisher.call
 
 #### Handling Events Asynchronously
 
-See [WisperNext]() for possible async adapters then:
+Ma is build on top of [WisperNext](https://gitlab.com/kris.leech/wisper_next)
+and as such can take advantage of the [async adapters](https://gitlab.com/kris.leech/wisper_next#handling-events-asynchronously).
 
-`include Ma.subscriber(:async)`.
+Configure an adapter and then pass `:async` as such:
+
+```ruby
+class MyListener
+  include Ma.subscriber(:async)
+end
+```
 
 ### Event class
 
@@ -46,6 +53,11 @@ The event can be any object which is:
 We provide a simple Struct-like event object, `Ma::Event`, but would recommend using some
 thing like [dry-struct](https://dry-rb.org/gems/dry-struct/1.0/) to define an
 event schema.
+
+A useful constraint, if you are using asynchronous listeners, is that
+dry-struct only supports primative types like `String`, `Integer`, `Hash` and
+`Array, which are easily serialized for transport over the wire to a background
+worker.
 
 #### Enhancing Events
 
