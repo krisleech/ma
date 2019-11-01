@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0]
+
 - Added: Ability for an object to publish events
 - Added: Ability for an object to subscribe to events
 - Added: Ability for subscriber to handle events async
-
