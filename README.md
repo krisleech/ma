@@ -78,6 +78,11 @@ end
 gem 'ma'
 ```
 
+## Security
+
+* gem releases are [signed]()
+* commits are GPG [signed]()
+
 ## Development
 
 ### Specs
