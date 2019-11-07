@@ -1,6 +1,12 @@
 # Ma 間
 
+*A micro library providing Ruby objects with Publish-Subscribe capabilities*
+
 > Ma (間) is a Japanese word which can be roughly translated as "gap", "space", "pause" or "the space between two structural parts."
+
+* Use as an alternative to callbacks and observers
+* Connect objects based on context without permanence
+* Publish events synchronously or asynchronously
 
 ## Usage
 
