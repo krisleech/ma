@@ -48,7 +48,7 @@ end
 The event can be any object which is:
 
 * initialized with a `Hash` of attributes
-* responds to `#to_h` returning a `Hash`
+* responds to `#to_h` returning a `Hash` of attributes
 
 We provide a simple Struct-like event object, `Ma::Event`, but would recommend using some
 thing like [dry-struct](https://dry-rb.org/gems/dry-struct/1.0/) to define an
