@@ -1,6 +1,6 @@
 # Ma 間
 
-*A micro library providing Ruby objects with Publish-Subscribe capabilities*
+*A micro library providing Ruby objects with the ability to Publish Events and Subscribe to Events*
 
 > Ma (間) is a Japanese word which can be roughly translated as "gap", "space", "pause" or "the space between two structural parts."
 
@@ -49,7 +49,7 @@ class MyListener
 end
 ```
 
-### Event class
+### Events
 
 The event can be any object which is:
 
